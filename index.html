@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Portfolio</title>
-</head>
 <body>
     <header class="header" id="header">
         <nav class="nav-container">
@@ -34,25 +33,21 @@
         </nav>
     </header>
 
-<section class="hero" id="home">
-      <div id="particles-js"></div>
-  <div class="hero-content">
-    <div class="hero-image">
-      <img src="assets/logoo.png" alt="JF Lustre">
-    </div>
+    <section class="hero" id="home">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="assets/logoo.png" alt="JF Lustre">
+            </div>
 
-    <h1>JF Lustre</h1>
-    <div class="tagline">Full Stack / Backend Developer</div>
-    <p class="description">
-      Passionate developer creating innovative digital solutions with modern technologies. 
-    </p>
-    <a href="#" class="cv-button" onclick="downloadCV()">Download CV</a>
-  </div>
-</section>
-
-
-
-
+            <h1>JF Lustre</h1>
+            <div class="tagline">Full Stack / Backend Developer</div>
+            <p class="description">
+                Passionate developer creating innovative digital solutions with modern technologies. 
+            </p>
+            <a href="#" class="cv-button" onclick="downloadCV()">Download CV</a>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
@@ -64,80 +59,80 @@
             <button class="filter-btn" onclick="filterProjects('non-coded')">Non-Coded</button>
         </div>
 
-        <!-- 3D Carousel -->
+        <!-- 3D Carousel - Updated with 3 projects -->
         <div class="carousel-container">
             <div class="carousel" id="carousel">
                 <div class="carousel-item" style="transform: rotateY(0deg) translateZ(200px);">
                     <h3>E-Commerce Platform</h3>
                     <p>Full-stack web application</p>
                 </div>
-                <div class="carousel-item" style="transform: rotateY(60deg) translateZ(200px);">
-                    <h3>Mobile App Design</h3>
-                    <p>UI/UX Design Project</p>
-                </div>
                 <div class="carousel-item" style="transform: rotateY(120deg) translateZ(200px);">
                     <h3>Dashboard Analytics</h3>
                     <p>React.js Application</p>
                 </div>
-                <div class="carousel-item" style="transform: rotateY(180deg) translateZ(200px);">
-                    <h3>Brand Identity</h3>
-                    <p>Logo & Brand Design</p>
-                </div>
                 <div class="carousel-item" style="transform: rotateY(240deg) translateZ(200px);">
                     <h3>Portfolio Website</h3>
                     <p>Responsive Web Design</p>
-                </div>
-                <div class="carousel-item" style="transform: rotateY(300deg) translateZ(200px);">
-                    <h3>API Development</h3>
-                    <p>Node.js Backend</p>
                 </div>
             </div>
         </div>
 
         <!-- Projects Grid -->
         <div class="projects-grid" id="projectsGrid">
-            <div class="project-card coded">
-                <div class="project-image">Project Image 1</div>
+            <div class="project-card coded" onclick="openModal('ecommerce')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">E-Commerce Platform</div>
+                </div>
                 <div class="project-info">
                     <h3>E-Commerce Platform</h3>
                     <p>A full-stack e-commerce solution built with React and Node.js, featuring user authentication, payment integration, and admin dashboard.</p>
                 </div>
             </div>
             
-            <div class="project-card non-coded">
-                <div class="project-image">Project Image 2</div>
+            <div class="project-card non-coded" onclick="openModal('mobile-app')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">Mobile App Design</div>
+                </div>
                 <div class="project-info">
                     <h3>Mobile App Design</h3>
                     <p>Complete UI/UX design for a fitness tracking mobile application with modern interface and intuitive user experience.</p>
                 </div>
             </div>
             
-            <div class="project-card coded">
-                <div class="project-image">Project Image 3</div>
+            <div class="project-card coded" onclick="openModal('dashboard')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">Dashboard Analytics</div>
+                </div>
                 <div class="project-info">
                     <h3>Dashboard Analytics</h3>
                     <p>Interactive data visualization dashboard built with React.js and D3.js for real-time business analytics.</p>
                 </div>
             </div>
             
-            <div class="project-card non-coded">
-                <div class="project-image">Project Image 4</div>
+            <div class="project-card non-coded" onclick="openModal('brand-identity')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">Brand Identity</div>
+                </div>
                 <div class="project-info">
                     <h3>Brand Identity Design</h3>
                     <p>Complete brand identity package including logo design, color palette, and brand guidelines for a tech startup.</p>
                 </div>
             </div>
             
-            <div class="project-card coded">
-                <div class="project-image">Project Image 5</div>
+            <div class="project-card coded" onclick="openModal('portfolio')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">Portfolio Website</div>
+                </div>
                 <div class="project-info">
                     <h3>Portfolio Website</h3>
                     <p>Responsive portfolio website with modern animations and interactive elements built with HTML, CSS, and JavaScript.</p>
                 </div>
             </div>
             
-            <div class="project-card coded">
-                <div class="project-image">Project Image 6</div>
+            <div class="project-card coded" onclick="openModal('api-dev')">
+                <div class="project-image">
+                    <div style="color: #666; font-size: 1rem;">API Development</div>
+                </div>
                 <div class="project-info">
                     <h3>API Development</h3>
                     <p>RESTful API built with Node.js and Express for a social media platform with authentication and real-time features.</p>
@@ -149,6 +144,29 @@
             <button class="see-more-btn" onclick="showMoreProjects()">See More Projects</button>
         </div>
     </section>
+
+    <!-- Project Modals -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="image-gallery" id="imageGallery">
+                    <!-- Images will be populated by JavaScript -->
+                </div>
+                <div class="project-details">
+                    <h3>Project Description</h3>
+                    <p id="modalDescription">Project description will be populated here.</p>
+                    <h3>Technologies Used</h3>
+                    <div class="tech-tags" id="modalTechTags">
+                        <!-- Tech tags will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -203,8 +221,33 @@
                 Let's collaborate and create something amazing together!
             </p>
             
+            <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-item">Email</a>
+                <a href="mailto:florenz525lustre@gmail.com" class="contact-item">Email</a>
                 <a href="https://linkedin.com/in/yourprofile" class="contact-item">LinkedIn</a>
                 <a href="https://github.com/yourusername" class="contact-item">GitHub</a>
                 <a href="https://twitter.com/yourusername" class="contact-item">Twitter</a>
@@ -212,7 +255,9 @@
         </div>
     </section>
 
-<script src="js/script.js"></script>
+    <script src="script.js">
+
+    </script>
 
 </body>
 </html>
